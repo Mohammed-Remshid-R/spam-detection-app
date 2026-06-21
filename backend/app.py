@@ -23,7 +23,7 @@ def serve():
     )
 
 
-@app.route("/<path:path>")
+@app.route("/<path:path>", methods=["GET"])
 def static_proxy(path):
     file_path = os.path.join(
         app.static_folder,

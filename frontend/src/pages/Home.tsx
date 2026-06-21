@@ -55,7 +55,8 @@ const Home: React.FC = () => {
       ]);
     } catch (err) {
       console.error(err);
-      alert("Error contacting the backend API. Please make sure the Flask server is running on http://localhost:5000");
+      const errorMessage = err instanceof Error ? err.message : "Unknown error";
+      alert(`Error contacting the backend API: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
