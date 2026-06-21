@@ -1,20 +1,16 @@
 ---
-
 title: SpamShield AI
 emoji: 🛡️
 colorFrom: blue
 colorTo: purple
 sdk: docker
 pinned: false
--------------
+---
 
 # SpamShield AI
 
-An AI-powered Spam Detection Web Application that classifies Email and SMS messages as **Spam** or **Not Spam** using Machine Learning.
+An AI-powered Spam Detection Web Application that classifies Email and SMS messages as Spam or Not Spam using Machine Learning.
 
-Built with **React + TypeScript**, **Flask**, and **Scikit-Learn**, the application provides real-time spam prediction, confidence scores, prediction history, dark mode support, and a modern responsive interface.
-
----
 
 ## Live Demo
 
