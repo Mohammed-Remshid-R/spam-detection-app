@@ -1,18 +1,14 @@
-# Python
-venv/
+node_modules/
+frontend/node_modules/
+
 __pycache__/
 *.pyc
 
-# React
-node_modules/
-dist/
+venv/
+.env
 
-# OS
-.DS_Store
-Thumbs.db
+frontend/dist/
 
-# Vscode
-.vscode/
+backend/model/__pycache__/
 
-# Logs
-*.log
+.git/

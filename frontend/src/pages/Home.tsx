@@ -55,7 +55,7 @@ const Home: React.FC = () => {
       ]);
     } catch (err) {
       console.error(err);
-      alert("Unable to connect to prediction API.");
+      alert("Error contacting the backend API. Please make sure the Flask server is running on http://localhost:5000");
     } finally {
       setLoading(false);
     }
