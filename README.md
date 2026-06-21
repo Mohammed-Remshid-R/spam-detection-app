@@ -1,3 +1,14 @@
+
+---
+title: Spam Detection App
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
+# Spam Detection App# Spam Detection App
 # Spam Detection Dashboard
 
 A Machine Learning based Spam Detection Web Application built using:
