@@ -25,39 +25,48 @@ vectorizer = joblib.load(
     methods=["POST"]
 )
 def predict():
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No JSON data provided"}), 400
 
-    data = request.get_json()
+        message = data.get(
+            "message",
+            ""
+        )
 
-    message = data.get(
-        "message",
-        ""
-    )
+        transformed = vectorizer.transform(
+            [message]
+        )
 
-    transformed = vectorizer.transform(
-        [message]
-    )
+        prediction = model.predict(
+            transformed
+        )[0]
 
-    prediction = model.predict(
-        transformed
-    )[0]
+        probability = model.predict_proba(
+            transformed
+        )[0]
 
-    probability = model.predict_proba(
-        transformed
-    )[0]
+        spam_probability = round(
+            probability[1] * 100,
+            2
+        )
 
-    spam_probability = round(
-        probability[1] * 100,
-        2
-    )
+        result = (
+            "Spam"
+            if prediction == 1
+            else "Not Spam"
+        )
 
-    result = (
-        "Spam"
-        if prediction == 1
-        else "Not Spam"
-    )
-
-    return jsonify({
-        "prediction": result,
-        "probability": spam_probability,
-        "accuracy": MODEL_ACCURACY
-    })
+        return jsonify({
+            "prediction": result,
+            "probability": spam_probability,
+            "accuracy": MODEL_ACCURACY
+        })
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            "error": str(e),
+            "traceback": traceback.format_exc()
+        }), 500

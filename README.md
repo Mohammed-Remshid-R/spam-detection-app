@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ---
 title: Spam Detection App
@@ -64,3 +65,18 @@ pip install -r requirements.txt
 python train_model.py
 
 python app.py
+=======
+---
+title: Spam Detection App
+emoji: 👀
+colorFrom: yellow
+colorTo: gray
+sdk: gradio
+sdk_version: 6.19.0
+python_version: '3.13'
+app_file: app.py
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> d7fb01484d3179f8dd45de1c61421a89c38cc7db
